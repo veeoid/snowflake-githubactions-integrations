@@ -1,0 +1,9 @@
+# Shared across all environments. Env-specific values live in dev/tst/prd.yml.
+#
+# Naming convention: MY_PROJECT_<ENV>_<LAYER>_DB
+
+deploy_order:
+  - tables
+  - views
+
+history_table: MY_PROJECT_{env}_MD_DB.CATALOG.DEPLOYMENT_HISTORY
