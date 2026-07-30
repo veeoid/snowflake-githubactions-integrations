@@ -1,13 +1,13 @@
-# deployt-tst.yml
-
 name: Test Deployment Workflow
 
 on:
-  push: [test]
+  push:
+    branches:
+      - test
 
 jobs:
   deploy:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
     environment: snowflake-tst
 
     permissions:
