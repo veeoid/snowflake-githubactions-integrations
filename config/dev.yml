@@ -1,0 +1,6 @@
+# config/dev.yml
+env: DEV
+account: LWIJILF-EG49475 # your trial account identifier
+user: VISMAY07
+role: ACCOUNTADMIN # fine for trial, never for real
+warehouse: COMPUTE_WH
