@@ -1,13 +1,13 @@
+# deployt-tst.yml
+
 name: Test Deployment Workflow
 
 on:
-  push:
-    branches:
-      - test
+  push: [test]
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubantu-latest
     environment: snowflake-tst
 
     permissions:
@@ -22,11 +22,11 @@ jobs:
           python-version: "3.12"
 
       - run: pip install snowflake-connector-python pyyaml
+      - run: echo "Okay something is running"
+      # - name: Generate TST folders from DEV
+      #   run: python deploy/convert_env.py --from dev --to tst
 
-      - name: Generate TST folders from DEV
-        run: python deploy/convert_env.py --from dev --to tst
-
-      - name: Deploy to TST
-        env:
-          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-        run: python deploy/deploy.py --env tst
+      # - name: Deploy to TST
+      #   env:
+      #     SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      #   run: python deploy/deploy.py --env tst
